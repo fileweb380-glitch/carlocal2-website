@@ -8,23 +8,22 @@ function Navbar({ active }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
 
     window.addEventListener("scroll", onScroll);
 
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
 
     if (el) {
-      const yOffset = -80;
-      const y =
-        el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({
-        top: y,
+      el.scrollIntoView({
         behavior: "smooth",
       });
     }
@@ -42,7 +41,9 @@ function Navbar({ active }) {
           right: 0,
           zIndex: 1000,
           padding: scrolled ? "14px 40px" : "22px 40px",
-          background: scrolled ? "rgba(10,10,10,0.92)" : "transparent",
+          background: scrolled
+            ? "rgba(10,10,10,0.92)"
+            : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           borderBottom: scrolled
             ? "1px solid rgba(200,169,110,0.15)"
@@ -53,7 +54,6 @@ function Navbar({ active }) {
           transition: "all 0.4s ease",
         }}
       >
-        {/* Logo */}
         <div
           style={{
             display: "flex",
@@ -68,14 +68,14 @@ function Navbar({ active }) {
               width: 38,
               height: 38,
               borderRadius: "50%",
-              background: "linear-gradient(135deg, #c8a96e, #e8c98e)",
+              background:
+                "linear-gradient(135deg, #c8a96e, #e8c98e)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontWeight: 900,
               fontSize: 16,
               color: "#0a0a0a",
-              letterSpacing: 1,
             }}
           >
             N
@@ -86,7 +86,8 @@ function Navbar({ active }) {
               fontSize: 22,
               fontWeight: 800,
               letterSpacing: 3,
-              background: "linear-gradient(90deg, #c8a96e, #e8c98e)",
+              background:
+                "linear-gradient(90deg, #c8a96e, #e8c98e)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -95,7 +96,6 @@ function Navbar({ active }) {
           </span>
         </div>
 
-        {/* Desktop Links */}
         <ul
           style={{
             display: "flex",
@@ -116,13 +116,6 @@ function Navbar({ active }) {
                   letterSpacing: 2,
                   textTransform: "uppercase",
                   color: active === l ? "#c8a96e" : "#aaa",
-                  borderBottom:
-                    active === l
-                      ? "1px solid #c8a96e"
-                      : "1px solid transparent",
-                  paddingBottom: 2,
-                  transition: "all 0.3s",
-                  fontFamily: "Inter, sans-serif",
                 }}
               >
                 {l}
@@ -131,13 +124,13 @@ function Navbar({ active }) {
           ))}
         </ul>
 
-        {/* CTA */}
         <Link to="/soon">
           <button
             style={{
               padding: "10px 24px",
               borderRadius: 50,
-              background: "linear-gradient(135deg, #c8a96e, #e8c98e)",
+              background:
+                "linear-gradient(135deg, #c8a96e, #e8c98e)",
               border: "none",
               cursor: "pointer",
               fontSize: 12,
@@ -151,7 +144,6 @@ function Navbar({ active }) {
           </button>
         </Link>
 
-        {/* Mobile Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{
@@ -166,7 +158,6 @@ function Navbar({ active }) {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div
           style={{
@@ -212,8 +203,7 @@ function Navbar({ active }) {
                 fontWeight: 700,
                 letterSpacing: 4,
                 textTransform: "uppercase",
-                color: active === l ? "#c8a96e" : "#f5f5f5",
-                fontFamily: "Inter, sans-serif",
+                color: "#f5f5f5",
               }}
             >
               {l}
