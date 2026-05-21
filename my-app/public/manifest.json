@@ -1,0 +1,25 @@
+{
+  "short_name": "NEMO CARS",
+  "name": "NEMO CARS",
+  "icons": [
+    {
+      "src": "/photo_2026-04-11_12-46-34.jpg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/photo_2026-04-11_12-46-34.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/photo_2026-04-11_12-46-34.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
