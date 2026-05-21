@@ -1,44 +1,7 @@
 import React from "react";
 
 function Soon() {
-
-  return (
-
-    <div style={styles.page}>
-
-      {/* Glow Background */}
-      <div style={styles.glow1}></div>
-      <div style={styles.glow2}></div>
-
-      {/* Content */}
-      <div style={styles.card}>
-
-        <div style={styles.badge}>
-          <a href="/" style={{textDecoration:'none', color:'white'}}>Back to Site</a>
-        </div>
-
-        <h1 style={styles.title}>
-          COMING
-          <span style={styles.gold}> SOON</span>
-        </h1>
-
-        <p style={styles.text}>
-          Something luxurious and powerful is
-          being crafted for you.
-          Stay tuned for the grand launch.
-        </p>
-
-        <button style={styles.button}>
-         When it Started We Notify You
-        </button>
-
-      </div>
-
-    </div>
-
-  )
-}
-
+  
 const styles = {
 
   page: {
@@ -173,5 +136,43 @@ const styles = {
   }
 
 }
+  return (
+
+    <div style={styles.page}>
+
+      {/* Glow Background */}
+      <div style={styles.glow1}></div>
+      <div style={styles.glow2}></div>
+
+      {/* Content */}
+      <div style={styles.card}>
+
+        <div style={styles.badge}>
+          <a href="/" style={{textDecoration:'none', color:'white'}}>Back to Site</a>
+        </div>
+
+        <h1 style={styles.title}>
+          COMING
+          <span style={styles.gold}> SOON</span>
+        </h1>
+
+        <p style={styles.text}>
+          Something luxurious and powerful is
+          being crafted for you.
+          Stay tuned for the grand launch.
+        </p>
+
+        <button style={styles.button}>
+         When it Started We Notify You
+        </button>
+
+      </div>
+
+    </div>
+
+  )
+}
+
+
 
 export default Soon;
