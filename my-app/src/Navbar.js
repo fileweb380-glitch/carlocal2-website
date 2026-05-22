@@ -42,7 +42,7 @@ function Navbar({ active }) {
         >
           <div className="logo-circle">N</div>
 
-          <span className="logo-text">NEMO</span>
+          <span className="logo-text">NEMO Test</span>
         </div>
 
         {/* DESKTOP LINKS */}

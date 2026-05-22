@@ -210,8 +210,7 @@ body{
   letter-spacing: 3px;
 
   background: linear-gradient(90deg, #c8a96e, #e8c98e);
-  
-  -webkit-background-clip: text;
+
   
   -webkit-text-fill-color: transparent;
 }
