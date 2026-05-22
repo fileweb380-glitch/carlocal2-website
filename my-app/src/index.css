@@ -143,3 +143,193 @@ code {
   }
 
 }
+
+/* NAVBAR */
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 22px 40px;
+
+  transition: 0.4s ease;
+}
+
+.navbar.scrolled{
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200,169,110,0.15);
+  padding: 14px 40px;
+}
+
+/* LOGO */
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-circle{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 900;
+
+  background: linear-gradient(135deg, #c8a96e, #e8c98e);
+  color: #0a0a0a;
+}
+
+.logo-text{
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  background: linear-gradient(90deg, #c8a96e, #e8c98e);
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* DESKTOP LINKS */
+
+.nav-links{
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links button{
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: #aaa;
+
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: 0.3s;
+}
+
+.nav-links button:hover{
+  color: #c8a96e;
+}
+
+.nav-links .active{
+  color: #c8a96e;
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+  padding: 10px 24px;
+  border-radius: 50px;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  background: linear-gradient(135deg, #c8a96e, #e8c98e);
+
+  color: #0a0a0a;
+}
+
+/* MENU BUTTON */
+
+.menu-btn{
+  display: none;
+
+  background: none;
+  border: none;
+
+  color: #c8a96e;
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+  position: fixed;
+  inset: 0;
+
+  background: rgba(10,10,10,0.97);
+
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 32px;
+}
+
+.close-btn{
+  position: absolute;
+  top: 24px;
+  right: 40px;
+
+  background: none;
+  border: none;
+
+  color: #c8a96e;
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+.mobile-link{
+  background: none;
+  border: none;
+
+  color: white;
+
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+
+  .nav-links{
+    display: none;
+  }
+
+  .book-link{
+    display: none;
+  }
+
+  .menu-btn{
+    display: block;
+  }
+
+  .navbar{
+    padding: 18px 20px;
+  }
+}

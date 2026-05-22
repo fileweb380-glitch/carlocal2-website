@@ -33,90 +33,25 @@ function Navbar({ active }) {
 
   return (
     <div>
-      <nav
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 1000,
-          padding: scrolled ? "14px 40px" : "22px 40px",
-          background: scrolled
-            ? "rgba(10,10,10,0.92)"
-            : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom: scrolled
-            ? "1px solid rgba(200,169,110,0.15)"
-            : "none",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          transition: "all 0.4s ease",
-        }}
-      >
+      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+
+        {/* LOGO */}
         <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            cursor: "pointer",
-          }}
+          className="logo"
           onClick={() => scrollTo("home")}
         >
-          <div
-            style={{
-              width: 38,
-              height: 38,
-              borderRadius: "50%",
-              background:
-                "linear-gradient(135deg, #c8a96e, #e8c98e)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontWeight: 900,
-              fontSize: 16,
-              color: "#0a0a0a",
-            }}
-          >
-            N
-          </div>
+          <div className="logo-circle">N</div>
 
-          <span
-            style={{
-              fontSize: 22,
-              fontWeight: 800,
-              letterSpacing: 3,
-              background:
-                "linear-gradient(90deg, #c8a96e, #e8c98e)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            NEMO
-          </span>
+          <span className="logo-text">NEMO</span>
         </div>
 
-        <ul
-          style={{
-            display: "flex",
-            gap: 36,
-            listStyle: "none",
-          }}
-        >
+        {/* DESKTOP LINKS */}
+        <ul className="nav-links">
           {links.map((l) => (
             <li key={l}>
               <button
                 onClick={() => scrollTo(l)}
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  fontSize: 13,
-                  fontWeight: 500,
-                  letterSpacing: 2,
-                  textTransform: "uppercase",
-                  color: active === l ? "#c8a96e" : "#aaa",
-                }}
+                className={active === l ? "active" : ""}
               >
                 {l}
               </button>
@@ -124,69 +59,29 @@ function Navbar({ active }) {
           ))}
         </ul>
 
-        <Link to="/soon">
-          <button
-            style={{
-              padding: "10px 24px",
-              borderRadius: 50,
-              background:
-                "linear-gradient(135deg, #c8a96e, #e8c98e)",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: 2,
-              textTransform: "uppercase",
-              color: "#0a0a0a",
-            }}
-          >
+        {/* BOOK BUTTON */}
+        <Link to="/soon" className="book-link">
+          <button className="book-btn">
             Book Now
           </button>
         </Link>
 
+        {/* MOBILE MENU BUTTON */}
         <button
+          className="menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: "#c8a96e",
-            fontSize: 24,
-          }}
         >
           ☰
         </button>
       </nav>
 
+      {/* MOBILE MENU */}
       {menuOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "rgba(10,10,10,0.97)",
-            zIndex: 999,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 32,
-          }}
-        >
+        <div className="mobile-menu">
+
           <button
+            className="close-btn"
             onClick={() => setMenuOpen(false)}
-            style={{
-              position: "absolute",
-              top: 24,
-              right: 40,
-              background: "none",
-              border: "none",
-              color: "#c8a96e",
-              fontSize: 28,
-              cursor: "pointer",
-            }}
           >
             ✕
           </button>
@@ -195,16 +90,7 @@ function Navbar({ active }) {
             <button
               key={l}
               onClick={() => scrollTo(l)}
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                fontSize: 28,
-                fontWeight: 700,
-                letterSpacing: 4,
-                textTransform: "uppercase",
-                color: "#f5f5f5",
-              }}
+              className="mobile-link"
             >
               {l}
             </button>
@@ -215,4 +101,4 @@ function Navbar({ active }) {
   );
 }
 
-export default Navbar
+export default Navbar;
