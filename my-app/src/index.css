@@ -144,6 +144,17 @@ code {
 
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #0a0a0a;
+  font-family: Arial, sans-serif;
+}
+
 /* NAVBAR */
 
 .navbar{
@@ -199,7 +210,8 @@ code {
   letter-spacing: 3px;
 
   background: linear-gradient(90deg, #c8a96e, #e8c98e);
-
+  -webkit-background-clip: text;
+  
   -webkit-text-fill-color: transparent;
 }
 
