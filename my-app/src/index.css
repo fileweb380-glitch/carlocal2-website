@@ -379,7 +379,6 @@ body{
 /* ========================= */
 /* RESPONSIVE */
 /* ========================= */
-
 @media screen and (max-width: 768px){
 
   .nav-links{
@@ -392,14 +391,6 @@ body{
 
   .menu-btn{
     display: block;
-  }
-
-  .navbar{
-    padding: 18px 20px;
-  }
-
-  .logo-text{
-    font-size: 18px;
   }
 
 }
