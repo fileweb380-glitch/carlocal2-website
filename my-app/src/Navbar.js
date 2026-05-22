@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const links = ["home", "cars", "about", "contact"];
 
-function Navbar({ active }) {
+function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -32,28 +32,22 @@ function Navbar({ active }) {
   };
 
   return (
-    <div>
-      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <>
+      <nav className={scrolled ? "navbar scrolled" : "navbar"}>
 
         {/* LOGO */}
-        <div
-          className="logo"
-          onClick={() => scrollTo("home")}
-        >
+        <div className="logo" onClick={() => scrollTo("home")}>
           <div className="logo-circle">N</div>
 
-          <span className="logo-text">NEMO</span>
+          <h1 className="logo-text">NEMO</h1>
         </div>
 
         {/* DESKTOP LINKS */}
         <ul className="nav-links">
-          {links.map((l) => (
-            <li key={l}>
-              <button
-                onClick={() => scrollTo(l)}
-                className={active === l ? "active" : ""}
-              >
-                {l}
+          {links.map((link) => (
+            <li key={link}>
+              <button onClick={() => scrollTo(link)}>
+                {link}
               </button>
             </li>
           ))}
@@ -66,10 +60,10 @@ function Navbar({ active }) {
           </button>
         </Link>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE MENU ICON */}
         <button
           className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen(true)}
         >
           ☰
         </button>
@@ -86,18 +80,26 @@ function Navbar({ active }) {
             ✕
           </button>
 
-          {links.map((l) => (
+          {links.map((link) => (
             <button
-              key={l}
-              onClick={() => scrollTo(l)}
+              key={link}
               className="mobile-link"
+              onClick={() => scrollTo(link)}
             >
-              {l}
+              {link}
             </button>
           ))}
+
+          <Link
+            to="/soon"
+            className="mobile-book-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Book Now
+          </Link>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
