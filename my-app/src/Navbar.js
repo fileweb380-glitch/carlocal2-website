@@ -215,4 +215,4 @@ function Navbar({ active }) {
   );
 }
 
-export default Navbar;
+export default Navbar
